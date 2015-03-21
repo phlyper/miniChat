@@ -370,7 +370,8 @@ public class Client extends JFrame implements ActionListener {
 
                 bc[i] = new JButton(" Connexion ");
 
-                bc[i].setEnabled(false);
+                bc[i].setEnabled(true);
+                //bc[i].setEnabled(false);
 
             }
 
@@ -616,9 +617,9 @@ public class Client extends JFrame implements ActionListener {
 
         public void traiter_requete(String msg) {
 
-            String p[] = msg.split("|");
+            String p[] = msg.split("\\|");
 
-            System.out.println("[" + msg + "] [" + p[0] + "] [" + p[1] + "] [" + p[2] + "]");
+            System.out.println(String.format("msg = [%s] ==> [%s] [%s] [%s]", msg, p[0], p[1], p[2]));
 
 
 
