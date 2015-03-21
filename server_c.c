@@ -131,6 +131,7 @@ void *traiter_requete(void* arg) {
     printf("Connection avec un client est effectuee %d \n", x);
 
     while (1) {
+    	strcpy(buffer, ""); // reintialiser le buffer
         int r = recv(getSocket(LCC[x]), buffer, sizeof (buffer), 0);
         if (r == -1) {
             printf("Erreur de reception\n");
@@ -141,7 +142,7 @@ void *traiter_requete(void* arg) {
         strcpy(p[0], strtok(buffer, "|"));
         strcpy(p[1], strtok(NULL, "|"));
         strcpy(p[2], strtok(NULL, "|"));
-        printf("[%s] [%s] [%s] [%s] \n", buffer, p[0], p[1], p[2]);
+        printf("buffer = [%s] ==> [%s] [%s] [%s] \n", buffer, p[0], p[1], p[2]);
 
         /* Inscription au serveur */
         /* buffer 'inscription|login|passwd' */
