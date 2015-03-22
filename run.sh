@@ -6,7 +6,10 @@ gcc server_c.c -o server -lpthread
 javac -Xlint Client.java
 
 # run server
-gnome-terminal -e ./server
+gnome-terminal --tab --title="Server Chat" --tab-with-profile=Default --command="./server"
 # run client
-gnome-terminal -e java Client
+gnome-terminal --tab --title="Client Chat" --tab-with-profile=Default --command="java Client"
+
+# manual of gnome-terminal
+# http://manpages.ubuntu.com/manpages/precise/en/man1/gnome-terminal.1.html
 
